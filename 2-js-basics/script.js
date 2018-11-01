@@ -1,44 +1,41 @@
-/* Basic Operators */
+/* Operator Precedence */
 
-// calculate birth year
-var yearCarl = 2018 - 29;
-console.log(yearCarl);
+var now, yearCarl, fullAge, isFullAge
+now = 2018;
+yearCarl = 1989;
+fullAge = 18;
 
-var yearCarl = 2018 - 29;
-var yearJohn = 2018 - 32;
-console.log(yearCarl);
-console.log(yearJohn);
+isFullAge = now - yearCarl >= fullAge; // true
 
-// should reuse vars to avoid repetition
-var year, yearCarl, yearJohn
-year = 2018;
-yearCarl = year - 29;
-yearJohn = year - 32;
+console.log(isFullAge);
 
-console.log(yearCarl);
-console.log(yearJohn);
+var ageCarl, ageJohn, average
+ageCarl = now - yearCarl;
+ageJohn = 35;
+average = ageCarl + ageJohn / 2;
 
-// additional math operators
-var now = 2018;
+console.log(average);
 
-console.log(now * 10);
-console.log(now + 10);
-console.log(now / 10);
+average = (ageCarl + ageJohn) / 2;
+console.log(average);
 
-// logical operators
-var ageCarl, ageJohn, johnOlder;
-ageCarl = 29;
-ageJohn = 32;
-johnOlder = ageJohn > ageCarl;
+// multiple assignment
+var x,y;
+x = (3 + 5) * 4 - 6; // 26
+x = y = (3 + 5) * 4 - 6; // 26
+console.log(x,y);
 
-console.log(johnOlder);
+// more operators
+x = x * 2;
+console.log(x);
 
-// typeof operator
-console.log(typeof johnOlder);
-console.log(typeof ageJohn);
-console.log(typeof 'John is older than Carl');
+x *= 2;
+console.log(x);
 
-var x;
-console.log(typeof x);
+x += 10
+console.log(x);
 
-
+// increment
+x = x + 1;
+x += 1;
+x++;
