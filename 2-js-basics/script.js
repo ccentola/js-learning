@@ -1,41 +1,25 @@
-/* Operator Precedence */
+/* Coding Challenge 1 */
 
-var now, yearCarl, fullAge, isFullAge
-now = 2018;
-yearCarl = 1989;
-fullAge = 18;
+/* 
+Mark and John are tryin gto compare their BMI (body mass index), which is calculated using the formula: BMI = mass / height^2.
+*/
 
-isFullAge = now - yearCarl >= fullAge; // true
+// store heights in variables
+var markHeight, markMass, johnHeight, johnMass;
+markHeight = 72;
+johnHeight = 76;
+markMass = 200;
+johnMass = 190;
 
-console.log(isFullAge);
+// calculate BMI
+var markBMI, johnBMI
+markBMI = markMass / (markHeight * markHeight);
+johnBMI - johnMass / (johnHeight * johnHeight);
 
-var ageCarl, ageJohn, average
-ageCarl = now - yearCarl;
-ageJohn = 35;
-average = ageCarl + ageJohn / 2;
+// determine if mark has a higher BMI than john
+var markBMIGreater = markBMI > johnBMI;
 
-console.log(average);
+// write to console
+console.log("Is Mark's BMI greater than John's? " + markBMIGreater );
 
-average = (ageCarl + ageJohn) / 2;
-console.log(average);
 
-// multiple assignment
-var x,y;
-x = (3 + 5) * 4 - 6; // 26
-x = y = (3 + 5) * 4 - 6; // 26
-console.log(x,y);
-
-// more operators
-x = x * 2;
-console.log(x);
-
-x *= 2;
-console.log(x);
-
-x += 10
-console.log(x);
-
-// increment
-x = x + 1;
-x += 1;
-x++;
