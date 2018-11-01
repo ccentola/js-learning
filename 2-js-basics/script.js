@@ -14,7 +14,7 @@ johnMass = 190;
 // calculate BMI
 var markBMI, johnBMI
 markBMI = markMass / (markHeight * markHeight);
-johnBMI - johnMass / (johnHeight * johnHeight);
+johnBMI = johnMass / (johnHeight * johnHeight);
 
 // determine if mark has a higher BMI than john
 var markBMIGreater = markBMI > johnBMI;
