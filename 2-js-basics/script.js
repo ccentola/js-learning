@@ -1,16 +1,40 @@
-// assign a value to a variable
-var firstName = 'Carl';
-console.log(firstName);
+/* Variable Mutation and Type Coercion */
 
-var lastName = 'Centola';
+var firstName = 'Carl';
 var age = 29;
 
-var fullAge = true;
-console.log(fullAge);
+// js automatically coerces types
+console.log(firstName+ ' '+age);
 
-// unassigned variables return undefined
-var job;
-console.log(job);
-
+// declare many variables on a single line
+var job, isMarried;
 job = 'Teacher';
-console.log(job);
+isMarried = false;
+
+console.log(
+    firstName +
+    ' is a ' + 
+    age + 
+    ' year old ' + 
+    job + 
+    '. Is he married? ' + 
+    isMarried
+);
+
+// variable mutation
+age = 'twenty nine';
+job = 'driver';
+
+alert(
+    firstName +
+    ' is a ' + 
+    age + 
+    ' year old ' + 
+    job + 
+    '. Is he married? ' + 
+    isMarried
+);
+
+// ask a user for input
+var lastName = prompt('What is his last name?');
+console.log(firstName + ' ' + lastName);
