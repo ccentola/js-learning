@@ -1,25 +1,24 @@
-/* Coding Challenge 1 */
+/* IF ELSE Statements*/
 
-/* 
-Mark and John are tryin gto compare their BMI (body mass index), which is calculated using the formula: BMI = mass / height^2.
-*/
+var firstName, civilStatus;
+firstName = 'Carl';
+civilStatus = 'single';
 
-// store heights in variables
-var markHeight, markMass, johnHeight, johnMass;
-markHeight = 72;
-johnHeight = 76;
-markMass = 200;
-johnMass = 190;
+if (civilStatus === 'married'){
+    // runs if true
+    console.log(firstName+' is married');
 
-// calculate BMI
-var markBMI, johnBMI
-markBMI = markMass / (markHeight * markHeight);
-johnBMI = johnMass / (johnHeight * johnHeight);
+} else {
+    // runs if false
+    console.log(firstName+' will hopefully marry soon.');
+}
 
-// determine if mark has a higher BMI than john
-var markBMIGreater = markBMI > johnBMI;
+// booleans evaluate to true or false
+var isMarried = false;
 
-// write to console
-console.log("Is Mark's BMI greater than John's? " + markBMIGreater );
+if (isMarried){
+    console.log(firstName+' is married');
 
-
+} else {
+    console.log(firstName+' will hopefully marry soon.');
+}
