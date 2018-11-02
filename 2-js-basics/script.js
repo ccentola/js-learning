@@ -1,81 +1,56 @@
-/* Truthy and Falsy Values and Equality Operators */
+/* Coding Challenge 2 */
 
-// falsy values: undefined, null, 0, '', NaN
-// truthy values: not falsy values
+/*
+John and Mike both play basketball on different teams. In the last 3 games, John's team scored 89, 120, ans 103 points. Mike's team scored 116, 94, and 123 points.
+*/
 
-// not defined
-var height;
+// calculate the average score for each team
+var johnsTeamAvg = (89 + 120 + 103) / 3;
+var mikesTeamAvg = (116 + 94 + 123) / 3;
 
-if (height) {
-    console.log('The variable is defined.');
+console.log(johnsTeamAvg);
+console.log(mikesTeamAvg);
+
+
+// print the team with the greater average score
+if (johnsTeamAvg > mikesTeamAvg) {
+    console.log("John's team had the higher average (" + johnsTeamAvg +").");
 } else {
-    console.log('The variable has not been defined.');
+    console.log("Mike's team had the higher average (" + mikesTeamAvg +").");
 }
 
-// defined
-var height;
-height = 23;
+// change the score to show different winners
+var johnsTeamAvg = (120 + 120 + 103) / 3;
+var mikesTeamAvg = (116 + 94 + 123) / 3;
 
-if (height) {
-    console.log('The variable is defined.');
+console.log(johnsTeamAvg);
+console.log(mikesTeamAvg);
+
+if (johnsTeamAvg > mikesTeamAvg) {
+    console.log("John's team had the higher average (" + johnsTeamAvg +").");
+} else if (mikesTeamAvg > johnsTeamAvg) {
+    console.log("Mike's team had the higher average (" + mikesTeamAvg +").");
 } else {
-    console.log('The variable has not been defined.');
+    console.log('Both teams had the same average score: (' + mikesTeamAvg +').');
 }
 
-// undefined
-var height;
-height = 0;
+// add Mary's team who scored 97,134, and 105
+var marysTeamAvg = (97 + 134 + 105) / 3
 
-if (height) {
-    console.log('The variable is defined.');
+console.log(johnsTeamAvg);
+console.log(mikesTeamAvg);
+console.log(marysTeamAvg);
+
+
+if (johnsTeamAvg > mikesTeamAvg && johnsTeamAvg > marysTeamAvg) {
+    console.log("John's team had the higher average (" + johnsTeamAvg +").");
+
+} else if (mikesTeamAvg > johnsTeamAvg && mikesTeamAvg > marysTeamAvg) {
+    console.log("Mike's team had the higher average (" + mikesTeamAvg +").");
+
+} else if (marysTeamAvg > mikesTeamAvg && marysTeamAvg > johnsTeamAvg){
+    console.log("Mary's team had the higher average (" + marysTeamAvg +").");
+    
 } else {
-    console.log('The variable has not been defined.');
-}
-
-// defined
-var height;
-height = 0;
-
-if (height || height === 0) {
-    console.log('The variable is defined.');
-} else {
-    console.log('The variable has not been defined.');
-}
-
-// defined
-var height;
-height = 'twenty';
-
-if (height || height === 0) {
-    console.log('The variable is defined.');
-} else {
-    console.log('The variable has not been defined.');
-}
-
-// not defined
-var height;
-height = '';
-
-if (height || height === 0) {
-    console.log('The variable is defined.');
-} else {
-    console.log('The variable has not been defined.');
-}
-
-// type equality - defined
-var height;
-height = 'twenty';
-
-if (height || height === 0) {
-    console.log('The variable is defined.');
-} else {
-    console.log('The variable has not been defined.');
-}
-
-// type equality - undefined
-var height;
-height = 23;
-
-if (height == '23') {
-    console.log('The == operator does type coercion');
+    console.log('All teams had the same average score: (' + mikesTeamAvg +').');
 }
