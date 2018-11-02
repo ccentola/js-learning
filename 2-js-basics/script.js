@@ -1,24 +1,18 @@
-/* IF ELSE Statements*/
+/* Boolean Logic */
 
-var firstName, civilStatus;
-firstName = 'Carl';
-civilStatus = 'single';
+var firstName = 'Carl';
+var age = 16;
 
-if (civilStatus === 'married'){
-    // runs if true
-    console.log(firstName+' is married');
+if (age < 13) {
+    console.log(firstName + ' is a boy.');
 
+} else if (age >= 13 && age <= 20) {
+    // && means "and"
+    console.log(firstName + ' is a teenager.');
+
+} else if (age >= 20 && age <= 30) {
+    console.log(firstName + ' is a young man.');
+    
 } else {
-    // runs if false
-    console.log(firstName+' will hopefully marry soon.');
-}
-
-// booleans evaluate to true or false
-var isMarried = false;
-
-if (isMarried){
-    console.log(firstName+' is married');
-
-} else {
-    console.log(firstName+' will hopefully marry soon.');
+    console.log(firstName + ' is a man.');
 }
