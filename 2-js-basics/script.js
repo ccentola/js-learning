@@ -1,49 +1,81 @@
-/* The Ternary Operator and Switch Statements */
+/* Truthy and Falsy Values and Equality Operators */
 
-var firstName = 'Carl';
-var age = 16;
+// falsy values: undefined, null, 0, '', NaN
+// truthy values: not falsy values
 
-// ternary operator
-age >= 18 ? console.log(firstName + ' drinks beer.')
-: console.log(firstName + ' drinks juice.');
+// not defined
+var height;
 
-var drink = age >= 18 ? 'beer' : 'juice';
-console.log(drink);
-
-
-// switch statement
-var job = 'instructor';
-
-switch (job) {
-    case 'teacher':
-    case 'instructor': 
-        console.log(firstName + ' teaches kids how to code.');
-        break;
-    case 'driver': 
-        console.log(firstName + ' drives an uber.');
-        break;
-    case 'designer': 
-        console.log(firstName + ' builds beautiful websites.');
-        break;
-    default:
-        console.log(firstName + ' does something else.');
+if (height) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
 }
 
+// defined
+var height;
+height = 23;
 
-// switch with numeric evaluation
-var age = 17;
+if (height) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
+}
 
-switch (true) {
-    case age < 13:
-        console.log(firstName + ' is a boy.');
-        break;
-    case age >= 13 && age < 20:
-        console.log(firstName + ' is a young man.');
-        break;
-    case age >= 20 && age < 30:
-        console.log(firstName + ' is a man.');
-        break;
-    default:
-        console.log(firstName + ' is a unknown.');
-        break;
+// undefined
+var height;
+height = 0;
+
+if (height) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
+}
+
+// defined
+var height;
+height = 0;
+
+if (height || height === 0) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
+}
+
+// defined
+var height;
+height = 'twenty';
+
+if (height || height === 0) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
+}
+
+// not defined
+var height;
+height = '';
+
+if (height || height === 0) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
+}
+
+// type equality - defined
+var height;
+height = 'twenty';
+
+if (height || height === 0) {
+    console.log('The variable is defined.');
+} else {
+    console.log('The variable has not been defined.');
+}
+
+// type equality - undefined
+var height;
+height = 23;
+
+if (height == '23') {
+    console.log('The == operator does type coercion');
 }
