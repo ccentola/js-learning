@@ -1,44 +1,43 @@
-/* Arrays */
+/* Coding Challenege 3 */
 
-var names = ['Carl','John','Mark'];
-var years = new Array(1990,1969,1980);
+/*
+Create a tip calculator for the following bills:
+$124, $48, $268.
 
-// access elements in an array
-console.log(names[0]);
+Rules:
+* tip 20% when the bill is less tahn $50
+* tip 15% when the bill is between $50 and $200
+* tip 10% when the bill is more than $200
 
-// list all emements in an array
-console.log(names);
+Show all three tips and all three totals
+*/
 
-// number of elements in an array
-console.log(names.length);
+// calculate tip
+function tip(bill) {
+    if (bill < 50){
+        percentage = 0.2;
+    } else if (bill >= 50 && bill <= 200) {
+        percentage = 0.15;
+    } else {
+        percentage =  0.1;
+    }
+    return bill * percentage
+}
 
-// mutate ana array
-names[1] = 'Ben';
-names[names.length] = 'Mary';
-console.log(names);
+// calcualte tips
+var bills = [124,48,268];
 
-// different data types
-var carl = ['Carl','Centola',1989,'teacher',false];
+var tips = [
+    tip(bills[0]),
+    tip(bills[1]),
+    tip(bills[2])
+];
 
-// add an element to the end of an array
-carl.push('blue');
-console.log(carl);
+var finalValues = [
+    bills[0] + tips[0],
+    bills[1] + tips[1],
+    bills[2] + tips[2]
+];
 
-// add to the beginning of an array
-carl.unshift('Mr.');
-console.log(carl);
-
-// remove the last element of an array
-carl.pop();
-console.log(carl);
-
-// remove the first element of an array
-carl.shift();
-console.log(carl);
-
-// find the index of an element in an array
-console.log(carl.indexOf(1989));
-
-var isDesigner = carl.indexOf('designer') === -1 ?
-'Carl is NOT a designer' : 'Carl IS a designer';
-console.log(isDesigner);
+console.log(tips);
+console.log(finalValues);
