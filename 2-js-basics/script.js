@@ -1,24 +1,44 @@
-/* Function Statements and Expressions */
+/* Arrays */
 
+var names = ['Carl','John','Mark'];
+var years = new Array(1990,1969,1980);
 
+// access elements in an array
+console.log(names[0]);
 
-// function declaration
-// funcation whatDoYouDo(job, firstName) {}
+// list all emements in an array
+console.log(names);
 
-// function expression
-var whatDoYouDo = function(job,firstName) {
-    switch(job) {
-        case 'teacher':
-            return firstName + ' teaches kids how to code.';
-        case 'driver':
-            return firstName + ' drives an uber.';
-        case 'designer':
-            return firstName + ' designs beautiful websites.';
-        default:
-            return firstName + ' does something else';
-    }
-}
+// number of elements in an array
+console.log(names.length);
 
-console.log(whatDoYouDo('teacher','Carl'));
-console.log(whatDoYouDo('designer','Carl'));
-console.log(whatDoYouDo('retired','Carl'));
+// mutate ana array
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// different data types
+var carl = ['Carl','Centola',1989,'teacher',false];
+
+// add an element to the end of an array
+carl.push('blue');
+console.log(carl);
+
+// add to the beginning of an array
+carl.unshift('Mr.');
+console.log(carl);
+
+// remove the last element of an array
+carl.pop();
+console.log(carl);
+
+// remove the first element of an array
+carl.shift();
+console.log(carl);
+
+// find the index of an element in an array
+console.log(carl.indexOf(1989));
+
+var isDesigner = carl.indexOf('designer') === -1 ?
+'Carl is NOT a designer' : 'Carl IS a designer';
+console.log(isDesigner);
