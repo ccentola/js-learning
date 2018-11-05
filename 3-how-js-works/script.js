@@ -1,23 +1,35 @@
-/* Hoisting */
+/* Scoping */
 
-// can use function before declaration
-calcAge(1990);
+// scoping chain example
+var a = 'Hello';
+first();
 
-function calcAge(year) {
-    console.log(2016 - year);
+function first() {
+    var b = 'Hi';
+    second();
+    function second() {
+        var c = 'Hey';
+        console.log(a + b + c);
+    }
 }
 
-// hoisting does not apply to function expressions 
-// retirement(1990); // does not work
+// scoping chain example
+var a = 'Hello';
+first();
 
-var retirement = function(year){
-    console.log( 65 - (2016 - year));
+function first() {
+    
+    var b = 'Hi';
+    second();
+
+    function second() {
+        var c = 'Hey';
+        third();
+    }
 }
 
-retirement(1990);
-
-// variables
-var age = 25;
-console.log(age);
-
-
+function third() {
+    var d = 'Carl'
+    // console.log(c);
+    console.log(a + d);
+}
