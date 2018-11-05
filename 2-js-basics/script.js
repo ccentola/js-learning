@@ -1,31 +1,18 @@
-/* Objects and Properties */
+/* Objects and Methods */
 
-// object
 var carl = {
-    firstName: 'Carl',
-    lastName: 'Centola',
     birthYear: 1989,
-    family: ['Jane','Mark','Bob'],
-    job: 'teacher',
-    isMarried: false
+    family: ["Jane", "Mark", "Bob"],
+    firstName: "Carl",
+    isMarried: true,
+    job: "programmer",
+    lastName: "Centola",
+    calcAge: function() {
+        // using "this" keyword to access object attributes
+        this.age = 2018 - this.birthYear;
+    }
 };
 
-console.log(carl);
-console.log(carl['lastName']);
-
-// retrive attributes
-var x = 'birthYear';
-console.log(carl[x]);
-
-// mutate an object
-carl.job = 'programmer';
-carl['isMarried'] = true;
-
+carl.calcAge();
 console.log(carl);
 
-// new object syntax
-var jane = new Object();
-jane.firstName = 'Jane';
-jane.birthYear = 1969;
-
-console.log(jane);
