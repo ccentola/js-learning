@@ -1,40 +1,45 @@
-/* Lopps and Iteration */
+/* Coding Challenge 5 */
 
-// simple for loop
-// set i; set range; increment
-for (var i = 0; i < 10; i++) {
-    console.log(i);
+var bill = {
+    bill: [124,48,268,180,42],
+    
+    calcTip: function() {
+        
+        this.tip = [];
+        this.finalBill = [];
+
+        for (var i = 0; i < this.bill.length; i++) {
+            
+            // determine tip percentage
+            var percentage;
+            var bill = this.bill[i];
+
+            if (bill < 50) {
+                percentage = 0.2;
+            } else if (bill >= 50 && bill<= 200) {
+                percentage = 0.15;
+            } else {
+                percentage = 0.1;
+            }
+
+            // add results to corresponding arrays
+            this.tip[i] = bill * percentage;
+            this.finalBill[i] = bill + (bill * percentage);
+        }
+    }
+};
+
+bill.calcTip();
+console.log(bill);
+
+// calculate the average tip
+function calcAverage(tips) {
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++){
+        sum = sum + tips[i];
+    }
+    return sum / tips.length;
 }
 
-// loop through the elements of an array
-var carl = ['Carl','Centola',1989,'data analyst',false];
-
-for (var i = 0; i < carl.length; i ++) {
-    console.log(carl[i]);
-}
-
-// while loop
-var i = 0;
-while(i < carl.length) {
-    console.log(carl[i]);
-    i++;
-}
-
-// continue
-for (var i = 0; i < carl.length; i ++) {
-    // log only string types
-    if (typeof carl[i] !== 'string') continue;
-    console.log(carl[i]);
-}
-
-// break
-for (var i = 0; i < carl.length; i ++) {
-    // end after first non-string is encountered
-    if (typeof carl[i] !== 'string') break;
-    console.log(carl[i]);
-}
-
-// looping backwards
-for (var i = carl.length - 1; i >= 0; i--) {
-    console.log(carl[i]);
-}
+bill.average = calcAverage(bill.tip);
+console.log(bill);
