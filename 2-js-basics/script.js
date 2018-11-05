@@ -7,16 +7,16 @@ var john = {
     mass: 185,
     height: 72,
     calcBMI: function() {
-        this.BMI = this.mass / (this.height * this.height);
+        this.BMI = (this.mass / (this.height * this.height)) * 703;
     }
 };
 
 var mark = {
-    name: 'John',
+    name: 'Mark',
     mass: 206,
     height: 70,
     calcBMI: function() {
-        this.BMI = this.mass / (this.height * this.height);
+        this.BMI = (this.mass / (this.height * this.height)) * 703;
     }
 };
 
