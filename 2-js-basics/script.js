@@ -1,43 +1,31 @@
-/* Coding Challenege 3 */
+/* Objects and Properties */
 
-/*
-Create a tip calculator for the following bills:
-$124, $48, $268.
+// object
+var carl = {
+    firstName: 'Carl',
+    lastName: 'Centola',
+    birthYear: 1989,
+    family: ['Jane','Mark','Bob'],
+    job: 'teacher',
+    isMarried: false
+};
 
-Rules:
-* tip 20% when the bill is less tahn $50
-* tip 15% when the bill is between $50 and $200
-* tip 10% when the bill is more than $200
+console.log(carl);
+console.log(carl['lastName']);
 
-Show all three tips and all three totals
-*/
+// retrive attributes
+var x = 'birthYear';
+console.log(carl[x]);
 
-// calculate tip
-function tip(bill) {
-    if (bill < 50){
-        percentage = 0.2;
-    } else if (bill >= 50 && bill <= 200) {
-        percentage = 0.15;
-    } else {
-        percentage =  0.1;
-    }
-    return bill * percentage
-}
+// mutate an object
+carl.job = 'programmer';
+carl['isMarried'] = true;
 
-// calcualte tips
-var bills = [124,48,268];
+console.log(carl);
 
-var tips = [
-    tip(bills[0]),
-    tip(bills[1]),
-    tip(bills[2])
-];
+// new object syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
 
-var finalValues = [
-    bills[0] + tips[0],
-    bills[1] + tips[1],
-    bills[2] + tips[2]
-];
-
-console.log(tips);
-console.log(finalValues);
+console.log(jane);
