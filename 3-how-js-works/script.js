@@ -1,35 +1,44 @@
-/* Scoping */
+/* The "this" Keyword */
 
-// scoping chain example
-var a = 'Hello';
-first();
+/*
+The "this" keyword is not assigned a value until a function where it is defined is actually called.
+*/
 
-function first() {
-    var b = 'Hi';
-    second();
-    function second() {
-        var c = 'Hey';
-        console.log(a + b + c);
+// console.log(this);
+
+caclAge(1989);
+
+function caclAge(year) {
+    // this var is still global object
+    console.log(2018 - year);
+    console.log(this); 
+}
+
+var carl = {
+    name:'Carl',
+    birthYear:1989,
+    calcAge: function() {
+        // this var is the carl object
+        console.log(this); 
+        console.log(2018 - this.birthYear);
+
+        function innerFunc() {
+
+            // back to window object
+            console.log(this);
+        }
+        innerFunc();
     }
-}
+};
 
-// scoping chain example
-var a = 'Hello';
-first();
+carl.calcAge();
 
-function first() {
-    
-    var b = 'Hi';
-    second();
+var mike = {
+    name:'Mike',
+    birthYear:1984
 
-    function second() {
-        var c = 'Hey';
-        third();
-    }
-}
+};
 
-function third() {
-    var d = 'Carl'
-    // console.log(c);
-    console.log(a + d);
-}
+// method borrowing
+mike.calcAge = carl.calcAge;
+mike.calcAge();
