@@ -1,32 +1,40 @@
-/* Coding Challenge 4 */
+/* Lopps and Iteration */
 
-// create objects with John and Mark's properties of name, mass, and height
+// simple for loop
+// set i; set range; increment
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
 
-var john = {
-    name: 'John',
-    mass: 185,
-    height: 72,
-    calcBMI: function() {
-        this.BMI = (this.mass / (this.height * this.height)) * 703;
-    }
-};
+// loop through the elements of an array
+var carl = ['Carl','Centola',1989,'data analyst',false];
 
-var mark = {
-    name: 'Mark',
-    mass: 206,
-    height: 70,
-    calcBMI: function() {
-        this.BMI = (this.mass / (this.height * this.height)) * 703;
-    }
-};
+for (var i = 0; i < carl.length; i ++) {
+    console.log(carl[i]);
+}
 
-john.calcBMI();
-mark.calcBMI();
+// while loop
+var i = 0;
+while(i < carl.length) {
+    console.log(carl[i]);
+    i++;
+}
 
-if (john.BMI > mark.BMI) {
-    console.log(john.name + ' has a BMI of ' + john.BMI);
-} else if (mark.BMI > john.BMI) {
-    console.log(mark.name + ' has a BMI of ' + mark.BMI);
-} else {
-    console.log('BMI is the same.');
+// continue
+for (var i = 0; i < carl.length; i ++) {
+    // log only string types
+    if (typeof carl[i] !== 'string') continue;
+    console.log(carl[i]);
+}
+
+// break
+for (var i = 0; i < carl.length; i ++) {
+    // end after first non-string is encountered
+    if (typeof carl[i] !== 'string') break;
+    console.log(carl[i]);
+}
+
+// looping backwards
+for (var i = carl.length - 1; i >= 0; i--) {
+    console.log(carl[i]);
 }
