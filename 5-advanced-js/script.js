@@ -1,17 +1,36 @@
-// Object.create
+// Primitives vs Objects
 
-var personProto = {
-    calcAge: function() {
-        console.log(2018 - yearOfBirth);
-    }
+// primitives
+var a = 23;
+var b = a;
+a = 46;
+
+console.log(a);
+console.log(b);
+
+// objects
+var obj1 = {
+    name: 'Carl',
+    age: 30
 };
 
-var carl = Object.create(personProto);
+var obj2 = obj1;
 
-carl.name = 'Carl';
-carl.yearOfBirth = 1989;
+console.log(obj1.age);
+console.log(obj2.age);
 
-var john = Object.create(personProto, {
-    name: {value: 'John'},
-    yearOfBirth: { value: 1969}
-});
+// functions
+var age = 29;
+var obj = {
+    name: 'Carl',
+    city: 'Austin'
+}
+function change(a, b) {
+    a = 30;
+    b.city = 'Boston';
+}
+
+change(age, obj);
+
+console.log(age);
+console.log(obj.city);
