@@ -1,24 +1,17 @@
-// function constructor
+// Object.create
 
-var carl = {
-    name: 'Carl',
-    yearOfBirth: 1989,
-    job: 'teacher'
+var personProto = {
+    calcAge: function() {
+        console.log(2018 - yearOfBirth);
+    }
 };
 
-var Person = function(name, yearOfBirth, job) {
-    this.name = name;
-    this.yearOfBirth = yearOfBirth;
-    this.job = job;
-}
+var carl = Object.create(personProto);
 
-Person.prototype.calcAge = function() {
-    console.log(2018 - this.yearOfBirth);
-}
+carl.name = 'Carl';
+carl.yearOfBirth = 1989;
 
-// instantiation
-var john = new Person('john', 1990, 'teacher');
-var mark = new Person('mark', 1945, 'retired');
-
-john.calcAge();
-mark.calcAge();
+var john = Object.create(personProto, {
+    name: {value: 'John'},
+    yearOfBirth: { value: 1969}
+});
