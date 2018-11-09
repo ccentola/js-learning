@@ -1,38 +1,26 @@
-// First Class Functions
+// Functions Returning Functions
 
-var years = [1990, 1989, 1998, 1986, 2001];
-
-function arrayCalc(arr, fn) {
-    var result = [];
-
-    for (var i = 0; i < arr.length; i++) {
-        result.push(fn(arr[i]));
-    }
-
-    return result;
-}
-
-function calcAge(x) {
-    return 2016 - x;
-}
-
-function isAdult(x) {
-    return x >= 18;
-}
-
-function maxHR(x) {
-    if (x >= 18 && x <= 81) {
-        return Math.round(206.9 - (0.67 * x));
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach, ' + name + '?');
+        }
     } else {
-        return -1;
+        return function(name) {
+            return console.log('Hello, '+name+'. What do you do?');
+        }
     }
 }
 
-var ages = arrayCalc(years, calcAge);
-console.log(ages);
+var teacherQuestion = interviewQuestion('teacher');
+var designerQuestion = interviewQuestion('designer');
 
-var fullAges = arrayCalc(years, isAdult);
-console.log(fullAges);
+teacherQuestion('Carl');
+designerQuestion('Mark');
 
-var heartRates = arrayCalc(ages, maxHR);
-console.log(heartRates);
+interviewQuestion('teacher')('John');
+
